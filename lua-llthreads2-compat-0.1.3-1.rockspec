@@ -1,9 +1,17 @@
+-- This file was automatically generated for the LuaDist project.
+
 package = "lua-llthreads2-compat"
-version = "scm-0"
+version = "0.1.3-1"
+-- LuaDist source
 source = {
-  url = "https://github.com/moteus/lua-llthreads2/archive/master.zip",
-  dir = "lua-llthreads2-master",
+  tag = "0.1.3-1",
+  url = "git://github.com/LuaDist-testing/lua-llthreads2-compat.git"
 }
+-- Original source
+-- source = {
+--   url = "https://github.com/moteus/lua-llthreads2/archive/v0.1.3.zip",
+--   dir = "lua-llthreads2-0.1.3",
+-- }
 description = {
   summary = "Low-Level threads for Lua",
   homepage = "http://github.com/moteus/lua-llthreads2",
