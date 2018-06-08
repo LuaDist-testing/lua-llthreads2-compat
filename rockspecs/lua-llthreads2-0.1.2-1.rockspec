@@ -1,23 +1,15 @@
--- This file was automatically generated for the LuaDist project.
-
-package = "lua-llthreads2-compat"
-version = "0.1.1-1"
--- LuaDist source
+package = "lua-llthreads2"
+version = "0.1.2-1"
 source = {
-  tag = "0.1.1-1",
-  url = "git://github.com/LuaDist-testing/lua-llthreads2-compat.git"
+  url = "https://github.com/moteus/lua-llthreads2/archive/v0.1.2.zip",
+  dir = "lua-llthreads2-0.1.2",
 }
--- Original source
--- source = {
---   url = "https://github.com/moteus/lua-llthreads2/archive/v0.1.1.zip",
---   dir = "lua-llthreads2-0.1.1",
--- }
 description = {
   summary = "Low-Level threads for Lua",
   homepage = "http://github.com/moteus/lua-llthreads2",
   license = "MIT/X11",
   detailed = [[
-    This is drop-in replacement for `lua-llthread` module.
+    This is drop-in replacement for `lua-llthread` module but the module called `llthreads2`.
     In additional module supports: thread join  with zero timeout; logging thread errors with 
     custom logger; run detached joinable threads; pass cfunctions as argument to child thread.
   ]],
@@ -30,23 +22,24 @@ build = {
   platforms = {
     unix = {
       modules = {
-        llthreads = {
+        llthreads2 = {
           libraries = {"pthread"},
         }
       }
     },
     windows = {
       modules = {
-        llthreads = {
+        llthreads2 = {
           libraries = {"kernel32"},
         }
       }
     }
   },
   modules = {
-    llthreads = {
+    llthreads2 = {
       sources = { "src/l52util.c", "src/llthread.c" },
-      defines = { "LLTHREAD_MODULE_NAME=llthreads"  },
-    }
+      defines = { "LLTHREAD_MODULE_NAME=llthreads2" },
+    },
+    ["llthreads2.ex"] = "src/lua/llthreads2/ex.lua",
   }
 }
